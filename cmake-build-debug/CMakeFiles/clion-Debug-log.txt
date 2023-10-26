@@ -1,0 +1,4 @@
+/Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/henrymoore/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/henrymoore/Documents/Projects/Pricing -B /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug

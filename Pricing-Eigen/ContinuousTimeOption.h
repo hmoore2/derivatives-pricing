@@ -1,0 +1,27 @@
+#pragma once
+
+#include "stdafx.h"
+#include <Eigen/Dense>
+
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
+
+/**
+ *  Interface class for an option whose payoff should
+ *  be approximated by looking at stock prices over all time
+ *  time points
+ */
+class ContinuousTimeOption {
+public: 
+    /*  Virtual destructor */
+    virtual ~ContinuousTimeOption() {};
+    /*  The maturity of the option */
+    virtual double getMaturity() const = 0;
+    /*  Calculate the payoff of the option given
+        a history of prices */
+    virtual MatrixXd payoff(
+        const MatrixXd& stockPrices
+        ) const = 0;
+    /*  Is the option path-dependent?*/
+    virtual bool isPathDependent() const = 0;
+};
