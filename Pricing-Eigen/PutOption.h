@@ -11,15 +11,15 @@
 class PutOption : public PathIndependentOption {
 public:
 
-    /*  Returns the payoff at maturity given a column vector
+    /*  Returns the Payoff at maturity given a column vector
         of scenarios */
-    MatrixXd payoffAtMaturity( const MatrixXd& stockAtMaturity ) const;
+    MatrixXd PayoffAtMaturity(const MatrixXd& stock_at_maturity ) const;
 
-    double price( const BlackScholesModel& bsm )
+    double Price(const BlackScholesModel& bsm )
     const;
 };
 
-void testPutOption();
+void TestPutOption();
 
 
 #endif //PRICINGLIBRARY_PUTOPTION_H

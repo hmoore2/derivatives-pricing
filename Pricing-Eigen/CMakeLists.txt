@@ -1,10 +1,7 @@
 project(Pricing-Eigen)
-
 set(HEADER_FILES
         MathsLib.h
         BlackScholesModel.h
-        RandomBase.h
-
 )
 
 set(SOURCE_FILES
@@ -26,14 +23,18 @@ set(SOURCE_FILES
         UpAndInOption.cpp
         LookbackOption.cpp
         LookbackOption.h
-        EquityModel.h
-        EquityModel.cpp
         AmericanCallOption.h
         EarlyExerciseOption.h
         EarlyExerciseOptionBase.cpp
         EarlyExerciseOptionBase.h
         AmericanCallOption.cpp
-        RandomBase.cpp
+        RandomNumberGenerator.h
+        Priceable.h
+        Portfolio.h
+        Portfolio.cpp
+        Priceable.cpp
+        RandomNumberGenerator.cpp
 )
+
 
 add_library(Pricing-Eigen STATIC ${SOURCE_FILES} ${HEADER_FILES})

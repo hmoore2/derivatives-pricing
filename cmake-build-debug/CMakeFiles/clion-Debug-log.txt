@@ -1,4 +1,5 @@
-/Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/henrymoore/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/henrymoore/Documents/Projects/Pricing -B /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
--- Configuring done (0.2s)
+C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/Users/hezza/AppData/Local/Programs/CLion/bin/ninja/win/x64/ninja.exe -DEigen3_DIR:PATH=C:\dev\vcpkg\packages\eigen3_x64-windows\share\eigen3 -DCMAKE_INSTALL_PREFIX:PATH=C:\dev -G Ninja -S C:\dev\Pricing -B C:\dev\Pricing\cmake-build-debug
+-- Could NOT find Python3 (missing: Python3_EXECUTABLE Interpreter) 
+-- Configuring done (2.5s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+-- Build files have been written to: C:/dev/Pricing/cmake-build-debug

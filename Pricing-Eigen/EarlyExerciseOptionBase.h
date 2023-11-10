@@ -7,23 +7,23 @@ class EarlyExerciseOptionBase :
 public:
     virtual ~EarlyExerciseOptionBase() {}
 
-    double getMaturity() const {
-        return maturity;
+    double GetMaturity() const {
+        return maturity_;
     }
 
-    void setMaturity(double maturity) {
-        this->maturity = maturity;
+    void SetMaturity(double maturity) {
+        this->maturity_ = maturity;
     }
 
-    double getStrike() const {
-        return strike;
+    double GetStrike() const {
+        return strike_;
     }
 
-    void setStrike(double strike) {
-        this->strike = strike;
+    void SetStrike(double strike) {
+        this->strike_ = strike;
     }
 private:
-    double maturity;
-    double strike;
+    double maturity_;
+    double strike_;
 
 };

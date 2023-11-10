@@ -7,15 +7,15 @@
 
 using namespace std;
 
-MatrixXd DownAndOutOption::payoff(
+MatrixXd DownAndOutOption::Payoff(
         const MatrixXd& prices ) const {
     MatrixXd min = prices.rowwise().minCoeff();
-    MatrixXd barrier = MatrixXd::Ones(min.rows(), min.cols()) * getBarrier();
-    MatrixXd didntHit = (min.array() > barrier.array()).cast<double>();
+    MatrixXd barrier = MatrixXd::Ones(min.rows(), min.cols()) * GetBarrier();
+    MatrixXd didnt_hit = (min.array() > barrier.array()).cast<double>();
     MatrixXd p = prices.col(prices.cols()-1);
 
-    p.array() -=  getStrike();
+    p.array() -= GetStrike();
     p = (p.array() < 0).select(0, p);
-    p = p.array() * didntHit.array();
+    p = p.array() * didnt_hit.array();
     return p;
 }

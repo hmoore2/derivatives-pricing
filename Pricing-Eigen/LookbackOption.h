@@ -2,17 +2,17 @@
 // Created by Henry Moore on 22/10/2023.
 //
 
-#ifndef PRICING_LOOKBACKOPTION_H
-#define PRICING_LOOKBACKOPTION_H
+#ifndef PRICING_PRICING_PRICING_EIGEN_LOOKBACKOPTION_H_
+#define PRICING_PRICING_PRICING_EIGEN_LOOKBACKOPTION_H_
 
 #include "ContinuousTimeOptionBase.h"
 
 class LookbackOption : public ContinuousTimeOptionBase {
 public:
-    MatrixXd payoff(const MatrixXd& prices) const;
+    MatrixXd Payoff(const MatrixXd& prices) const;
 
-    bool isPathDependent() const {
+    bool IsPathDependent() const {
         return true;
     }
 };
-#endif //PRICING_LOOKBACKOPTION_H
+#endif //PRICING_PRICING_PRICING_EIGEN_LOOKBACKOPTION_H_

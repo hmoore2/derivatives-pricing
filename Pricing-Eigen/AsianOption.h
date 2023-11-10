@@ -2,20 +2,20 @@
 // Created by hezza on 11/10/2023.
 //
 
-#ifndef PRICINGLIBRARY_ASIANOPTION_H
-#define PRICINGLIBRARY_ASIANOPTION_H
+#ifndef PRICING_PRICING_PRICING_EIGEN_ASIANOPTION_H_
+#define PRICING_PRICING_PRICING_EIGEN_ASIANOPTION_H_
 
 #include "ContinuousTimeOptionBase.h"
 
 class AsianOption : public ContinuousTimeOptionBase {
 public:
     
-    MatrixXd payoff(const MatrixXd& prices) const;
+    MatrixXd Payoff(const MatrixXd& prices) const;
 
-    bool isPathDependent() const {
+    bool IsPathDependent() const {
         return true;
     }
 };
 
 
-#endif //PRICINGLIBRARY_ASIANOPTION_H
+#endif //PRICING_PRICING_PRICING_EIGEN_ASIANOPTION_H_

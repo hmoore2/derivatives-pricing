@@ -5,7 +5,7 @@
 
 /**
  *   This states that all path independent options
- *   have a payoff determined by the final stock price
+ *   have a Payoff determined by the final stock Price
  */
 
 using Eigen::MatrixXd;
@@ -17,17 +17,17 @@ class PathIndependentOption :
 public:
     /*  A virtual destructor */
     virtual ~PathIndependentOption() {}
-    /*  Returns the payoff at maturity given a column vector
+    /*  Returns the Payoff at maturity given a column vector
         of scenarios */
-    virtual MatrixXd payoffAtMaturity( const MatrixXd& finalStockPrice) const
+    virtual MatrixXd PayoffAtMaturity(const MatrixXd& final_stock_price) const
         = 0;
-    /*  Compute the payoff from a price path */   
-    MatrixXd payoff(
-            const MatrixXd& stockPrices ) const {
-        return payoffAtMaturity( stockPrices.col(stockPrices.cols()-1));
+    /*  Compute the Payoff from a Price path */
+    MatrixXd Payoff(
+            const MatrixXd& stock_prices ) const {
+        return PayoffAtMaturity(stock_prices.col(stock_prices.cols() - 1));
     }
     /*  Is the option path dependent? */
-    bool isPathDependent() const {
+    bool IsPathDependent() const {
         return false;
     };
 };

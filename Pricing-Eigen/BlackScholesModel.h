@@ -6,44 +6,61 @@
 
 #include "stdafx.h"
 #include "Eigen/Dense"
-#include "EquityModel.h"
 
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
-class BlackScholesModel : public EquityModel {
+class BlackScholesModel {
 public:
     BlackScholesModel();
-    double drift;
-    double stockPrice;
-    double volatility;
-    double riskFreeRate;
-    double date;
+    double drift_;
+    double stock_price_;
+    double volatility_;
+    double risk_free_rate_;
+    double date_;
 
-    MatrixXd generatePricePaths(
-            double toDate,
-            int nPaths,
-            int nSteps) const;
+    MatrixXd GeneratePricePaths(
+            double to_date,
+            int n_paths,
+            int n_steps) const;
 
-    MatrixXd generateRiskNeutralPricePaths(
-            double toDate,
-            int nPaths,
-            int nSteps) const;
+    MatrixXd GenerateRiskNeutralPricePaths(
+            double to_date,
+            int n_paths,
+            int n_steps) const;
 
-    double getRiskFreeRate() const {
-        return riskFreeRate;
+  MatrixXd GeneratePricePathsAntithetic(
+	  double to_date,
+	  int n_paths,
+	  int n_steps) const;
+
+  MatrixXd GenerateRiskNeutralPricePathsAntithetic(
+	  double to_date,
+	  int n_paths,
+	  int n_steps) const;
+
+
+  double GetRiskFreeRate() const {
+        return risk_free_rate_;
     }
-    double getDate() const {
-        return date;
+    double GetDate() const {
+        return date_;
     }
 
 private:
 
-    MatrixXd generatePricePaths(
-            double toDate,
-            int nPaths,
-            int nSteps,
+    MatrixXd GeneratePricePaths(
+            double to_date,
+            int n_paths,
+            int n_steps,
             double drift) const;
+
+  	MatrixXd GeneratePricePathsAntithetic(
+	  double to_date,
+	  int n_paths,
+	  int n_steps,
+	  double drift) const;
+
 };
 
 //void testBlackScholesModel();

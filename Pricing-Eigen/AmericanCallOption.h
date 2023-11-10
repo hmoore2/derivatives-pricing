@@ -7,7 +7,7 @@
 
 class AmericanCallOption : public EarlyExerciseOptionBase {
 public:
-	double price(const BlackScholesModel& bsm, int numAssetSteps)
+	double Price(const BlackScholesModel& bsm, int n_asset_steps)
 		const;
 };
 

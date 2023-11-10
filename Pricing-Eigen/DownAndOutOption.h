@@ -10,7 +10,7 @@
 
 class DownAndOutOption : public KnockoutOption {
 public:
-    MatrixXd payoff(
+    MatrixXd Payoff(
             const MatrixXd& prices ) const;
 };
 

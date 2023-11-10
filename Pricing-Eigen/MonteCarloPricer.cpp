@@ -11,44 +11,53 @@ using namespace std;
 
 
 MonteCarloPricer::MonteCarloPricer() :
-        nScenarios(10000),
-        nSteps(10) {
+	n_scenarios_(10000),
+	n_steps_(10) {
 }
 
-double MonteCarloPricer::price(
+double MonteCarloPricer::Price(
         const ContinuousTimeOption& option,
-        const EquityModel& model ) {
-    int nSteps = this->nSteps;
-    if (!option.isPathDependent()) {
-        nSteps = 1;
+        const BlackScholesModel& model, const bool antithetic ) {
+    int n_steps = this->n_steps_;
+    if (!option.IsPathDependent()) {
+	  n_steps = 1;
     }
     double total = 0.0;
-
-    // We price at most one million scenarios at a time to avoid running out of memory
-    int batchSize = 10000000/nSteps;
-    if (batchSize<=0) {
-        batchSize = 1;
+	MatrixXd paths;
+	// We Price at most one million scenarios at a time to avoid running out of memory
+    int batch_size = 10000000/n_steps;
+    if (batch_size<=0) {
+	  batch_size = 1;
     }
 
-    int scenariosRemaining = nScenarios;
-    while (scenariosRemaining>0) {
+    int scenarios_remaining = n_scenarios_;
+    while (scenarios_remaining>0) {
 
-        int thisBatch = batchSize;
-        if (scenariosRemaining<batchSize) {
-            thisBatch = scenariosRemaining;
+        int this_batch = batch_size;
+        if (scenarios_remaining<batch_size) {
+		  this_batch = scenarios_remaining;
         }
+			if(antithetic){
+			paths = model.
+				GenerateRiskNeutralPricePathsAntithetic(
+				option.GetMaturity(),
+				this_batch,
+				n_steps);
+			}
+			else{
+				paths = model.
+				GenerateRiskNeutralPricePaths(
+				option.GetMaturity(),
+				this_batch,
+				n_steps);
+			}
 
-        MatrixXd paths= model.
-                generateRiskNeutralPricePaths(
-                option.getMaturity(),
-                thisBatch,
-                nSteps );
-        MatrixXd payoffs = option.payoff( paths );
+        MatrixXd payoffs = option.Payoff(paths);
         total+= payoffs.rowwise().sum().sum();
-        scenariosRemaining-=thisBatch;
+	  	scenarios_remaining-=this_batch;
     }
-    double mean = total/nScenarios;
-    double r = model.getRiskFreeRate();
-    double T = option.getMaturity() - model.getDate();
-    return exp(-r*T)*mean;
+    double mean = total/n_scenarios_;
+    double r = model.GetRiskFreeRate();
+    double t = option.GetMaturity() - model.GetDate();
+    return exp(-r*t)*mean;
 }

@@ -1,8 +1,8 @@
-# Install script for directory: /Users/henrymoore/Documents/Projects/Pricing/Google_tests
+# Install script for directory: C:/dev/Pricing/Google_tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/dev")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "C:/Users/hezza/AppData/Local/Programs/CLion/bin/mingw/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/cmake_install.cmake")
+  include("C:/dev/Pricing/cmake-build-debug/Google_tests/lib/cmake_install.cmake")
 
 endif()
 

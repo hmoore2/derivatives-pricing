@@ -7,23 +7,18 @@
 
 using namespace std;
 
-MatrixXd UpAndOutOption::payoff(
+MatrixXd UpAndOutOption::Payoff(
         const MatrixXd& prices ) const {
     MatrixXd max = prices.rowwise().maxCoeff();
-    MatrixXd barrier = MatrixXd::Ones(max.rows(), max.cols()) * getBarrier();
-    MatrixXd didntHit = (max.array() < barrier.array()).cast<double>();
+    MatrixXd barrier = MatrixXd::Ones(max.rows(), max.cols()) * GetBarrier();
+    MatrixXd didnt_hit = (max.array() < barrier.array()).cast<double>();
     MatrixXd p = prices.col(prices.cols()-1);
-    p.array() -=  getStrike();
+    p.array() -= GetStrike();
     p = (p.array() < 0).select(0, p);
 
-    p = p.array() * didntHit.array();
+    p = p.array() * didnt_hit.array();
     return p;
 }
 
-/////////////////////////////////////
-//
-//   TESTS
-//
-/////////////////////////////////////
 
 

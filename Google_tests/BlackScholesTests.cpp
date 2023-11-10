@@ -3,6 +3,8 @@
 //
 #include "gtest/gtest.h"
 #include "../Pricing-Eigen/MathsLib.h"
+#include "../Pricing-Eigen/Portfolio.h"
+#include "../Pricing-Eigen/Priceable.h"
 #include "../Pricing-Eigen/BlackScholesModel.h"
 #include "../Pricing-Eigen/CallOption.h"
 #include "../Pricing-Eigen/ContinuousTimeOption.h"
@@ -16,225 +18,245 @@
 #include "../Pricing-Eigen/UpAndInOption.h"
 #include "../Pricing-Eigen/LookbackOption.h"
 #include "../Pricing-Eigen/AmericanCallOption.h"
+#include "../Pricing-Eigen/RandomNumberGenerator.h"
 
+
+#include <cmath>
 
 TEST(AmericanOption, price){
-    AmericanCallOption americanCallOption;
-    americanCallOption.setStrike(95.0);
-    americanCallOption.setMaturity(1.0);
-    int NAS = 200;
+    AmericanCallOption american_call_option;
+  american_call_option.SetStrike(95.0);
+  american_call_option.SetMaturity(1.0);
+    int nas = 200;
 
     BlackScholesModel bsm;
-    bsm.volatility = 0.3;
-    bsm.riskFreeRate = 0.1;
-    bsm.stockPrice = 100;
-    double price = americanCallOption.price(bsm, NAS);
+    bsm.volatility_ = 0.3;
+    bsm.risk_free_rate_ = 0.1;
+    bsm.stock_price_ = 100;
+    double price = american_call_option.Price(bsm, nas);
     ASSERT_NEAR(price,19.478084290351838, 0.01);
 }
 
 
 
 TEST(BlackScholesModel, pricePath){
-    rng("default");
+    //Rng("default");
 
     BlackScholesModel bsm;
-    bsm.riskFreeRate = 0.05;
-    bsm.volatility = 0.1;
-    bsm.stockPrice = 100.0;
-    bsm.date = 2.0;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.volatility_ = 0.1;
+    bsm.stock_price_ = 100.0;
+    bsm.date_ = 2.0;
 
-    int nPaths = 100000;
+    int n_paths = 100000;
     int nsteps = 5;
     double maturity = 4.0;
     MatrixXd paths =
-            bsm.generateRiskNeutralPricePaths( maturity,
-                                               nPaths,
-                                               nsteps );
-    MatrixXd finalPrices = paths.col( nsteps-1 );
-    ASSERT_NEAR(finalPrices.rowwise().mean().mean(),
-                         exp( bsm.riskFreeRate*2.0)*bsm.stockPrice, 0.1);
+		bsm.GenerateRiskNeutralPricePaths(maturity,
+										  n_paths,
+										  nsteps);
+    MatrixXd final_prices = paths.col(nsteps-1 );
+    ASSERT_NEAR(final_prices.rowwise().mean().mean(),
+				exp( bsm.risk_free_rate_*2.0)*bsm.stock_price_, 0.1);
 }
 
 TEST(MonteCarloPricer, callOptionMC){
-    rng("default");
+    //Rng("default");
 
     CallOption c;
-    c.setStrike( 110 );
-    c.setMaturity( 2 );
+  c.SetStrike(110);
+  c.SetMaturity(2);
 
     BlackScholesModel m;
-    m.volatility = 0.1;
-    m.riskFreeRate = 0.05;
-    m.stockPrice = 100.0;
-    m.drift = 0.1;
-    m.date = 1;
+    m.volatility_ = 0.1;
+    m.risk_free_rate_ = 0.05;
+    m.stock_price_ = 100.0;
+    m.drift_ = 0.1;
+    m.date_ = 1;
 
     MonteCarloPricer pricer;
-    double price = pricer.price( c, m );
-    double expected = c.price( m );
+    double price = pricer.Price(c, m, true);
+    double expected = c.Price(m);
     ASSERT_NEAR( price, expected, 0.1 );
 }
 
 TEST(CallOption, callOptionPrice){
-    rng("default");
+    //Rng("default");
 
     CallOption c;
-    c.setStrike( 110 );
-    c.setMaturity( 2 );
+  c.SetStrike(110);
+  c.SetMaturity(2);
 
     BlackScholesModel m;
-    m.volatility = 0.1;
-    m.riskFreeRate = 0.05;
-    m.stockPrice = 100.0;
-    m.drift = 0.1;
-    m.date = 1;
+    m.volatility_ = 0.1;
+    m.risk_free_rate_ = 0.05;
+    m.stock_price_ = 100.0;
+    m.drift_ = 0.1;
+    m.date_ = 1;
 
     MonteCarloPricer pricer;
-    pricer.nScenarios = 10000;
-    double price = pricer.price( c, m );
-    double expected = c.price( m );
+    pricer.n_scenarios_ = 10000;
+    double price = pricer.Price(c, m, true);
+    double expected = c.Price(m);
     ASSERT_NEAR( price, expected, 0.1 );
 }
 
 TEST(digitalOption, testDigitalOptionPrice){
-    DigitalOption digitalOption;
-    digitalOption.setStrike( 105.0 );
-    digitalOption.setMaturity( 2.0 );
+    DigitalOption digital_option;
+  digital_option.SetStrike(105.0);
+  digital_option.SetMaturity(2.0);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
 
-    double price = digitalOption.price( bsm );
+    double price = digital_option.Price(bsm);
     ASSERT_NEAR( price, 0.4612, 0.01);
 }
 
-TEST(putOption, testPutOption){
-    PutOption putOption;
-    putOption.setStrike( 105.0 );
-    putOption.setMaturity( 2.0 );
+TEST(putOption, TestPutOption){
+    PutOption put_option;
+  put_option.SetStrike(105.0);
+  put_option.SetMaturity(2.0);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double price = putOption.price( bsm );
+    double price = put_option.Price(bsm);
     ASSERT_NEAR( price, 3.92, 0.01);
 }
 
 TEST(asianOption, testAsianOption){
-    AsianOption asianOption;
-    asianOption.setStrike( 105.0 );
-    asianOption.setMaturity( 2.0 );
+    AsianOption asian_option;
+  asian_option.SetStrike(105.0);
+  asian_option.SetMaturity(2.0);
 
-    CallOption callOption;
-    callOption.setStrike( 105.0 );
-    callOption.setMaturity( 2.0 );
+    CallOption call_option;
+  call_option.SetStrike(105.0);
+  call_option.SetMaturity(2.0);
 
-    DigitalOption digitalOption;
-    digitalOption.setStrike( 105.0 );
-    digitalOption.setMaturity( 2.0 );
+    DigitalOption digital_option;
+  digital_option.SetStrike(105.0);
+  digital_option.SetMaturity(2.0);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double price = asianOption.price( bsm );
-    double callPrice = callOption.price( bsm );
-    double digitalPrice = digitalOption.price( bsm );
-    ASSERT_LE( price, callPrice);
-    ASSERT_LE( digitalPrice, price);
+    double price = asian_option.Price(bsm, true);
+    double call_price = call_option.Price(bsm);
+    double digital_price = digital_option.Price(bsm);
+    ASSERT_LE(price, call_price);
+    ASSERT_LE(digital_price, price);
 }
 
 TEST(UpAndOutOption, testUpAndOutOptionPrice){
 
-    CallOption callOption;
-    callOption.setStrike( 105.0 );
-    callOption.setMaturity( 2.0 );
+    CallOption call_option;
+  call_option.SetStrike(105.0);
+  call_option.SetMaturity(2.0);
 
-    UpAndOutOption upAndOutOption;
-    upAndOutOption.setStrike( 105.0 );
-    upAndOutOption.setMaturity( 2.0 );
-    upAndOutOption.setBarrier(4000);
+    UpAndOutOption up_and_out_option;
+  up_and_out_option.SetStrike(105.0);
+  up_and_out_option.SetMaturity(2.0);
+  up_and_out_option.SetBarrier(4000);
 
-    UpAndOutOption upAndOutOption2;
-    upAndOutOption2.setStrike( 105.0 );
-    upAndOutOption2.setMaturity( 2.0 );
-    upAndOutOption2.setBarrier(140);
+    UpAndOutOption up_and_out_option_2;
+  up_and_out_option_2.SetStrike(105.0);
+  up_and_out_option_2.SetMaturity(2.0);
+  up_and_out_option_2.SetBarrier(140);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double callPrice = callOption.price( bsm );
-    double upAndOutPrice = upAndOutOption.price( bsm );
-    double upAndOutPrice2 = upAndOutOption2.price( bsm );
+    double call_price = call_option.Price(bsm);
+    double up_and_out_price = up_and_out_option.Price(bsm, true);
+    double up_and_out_price_2 = up_and_out_option_2.Price(bsm, true);
 
-    ASSERT_NEAR( upAndOutPrice, callPrice, 0.1);
-    ASSERT_LE( upAndOutPrice2, callPrice);
+    ASSERT_NEAR(up_and_out_price, call_price, 0.1);
+    ASSERT_LE(up_and_out_price_2, call_price);
 }
 
 TEST(UpAndOutDownAndOut, UpAndOutOptionPriceTestAnalytical){
 
-    CallOption callOption;
-    callOption.setStrike( 105.0 );
-    callOption.setMaturity( 2.0 );
+    CallOption call_option;
+  call_option.SetStrike(105.0);
+  call_option.SetMaturity(2.0);
 
-    UpAndOutOption upAndOutOption;
-    upAndOutOption.setStrike( 105.0 );
-    upAndOutOption.setMaturity( 2.0 );
-    upAndOutOption.setBarrier(110);
+    UpAndOutOption up_and_out_option;
+  up_and_out_option.SetStrike(105.0);
+  up_and_out_option.SetMaturity(2.0);
+  up_and_out_option.SetBarrier(110);
 
-    UpAndInOption upAndInOption;
-    upAndInOption.setStrike( 105.0 );
-    upAndInOption.setMaturity( 2.0 );
-    upAndInOption.setBarrier(110);
+    UpAndInOption up_and_in_option;
+  up_and_in_option.SetStrike(105.0);
+  up_and_in_option.SetMaturity(2.0);
+  up_and_in_option.SetBarrier(110);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double callPrice = callOption.price( bsm );
-    double upAndOutPrice = upAndOutOption.price( bsm );
-    double upAndInPrice = upAndInOption.price( bsm );
+    double call_price = call_option.Price(bsm);
+    double up_and_out_price = up_and_out_option.Price(bsm, true);
+    double up_and_in_price = up_and_in_option.Price(bsm, true);
     // The value of an up-and-in call option plus an up-and out should be the same as a vanilla call.
-    double total = upAndInPrice + upAndOutPrice;
+    double total = up_and_in_price + up_and_out_price;
 
-    ASSERT_NEAR(callPrice, total, 0.1);
+    ASSERT_NEAR(call_price, total, 0.1);
 
 }
 
 TEST(LookbackOption, LookbackOptionPrice){
 
-    CallOption callOption;
-    callOption.setStrike( 105.0 );
-    callOption.setMaturity( 2.0 );
+    CallOption call_option;
+  	call_option.SetStrike(105.0);
+  	call_option.SetMaturity(2.0);
 
-    LookbackOption lookbackOption;
-    lookbackOption.setStrike(105.0);
-    lookbackOption.setMaturity(105.0);
+    LookbackOption lookback_option;
+  	lookback_option.SetStrike(105.0);
+  	lookback_option.SetMaturity(105.0);
 
     BlackScholesModel bsm;
-    bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.date_ = 1.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double callPrice = callOption.price( bsm );
-    double lookbackPrice = lookbackOption.price(bsm);
+    double call_price = call_option.Price(bsm);
+    double lookbackPrice = lookback_option.Price(bsm, true);
 
-    ASSERT_LE(callPrice, lookbackPrice);
+    ASSERT_LE(call_price, lookbackPrice);
+}
+
+TEST(AntitheticTest, antitheticConvergence){
+
+	LookbackOption lookback_option;
+	lookback_option.SetStrike(105.0);
+	lookback_option.SetMaturity(105.0);
+
+	BlackScholesModel bsm;
+	bsm.date_ = 1.0;
+	bsm.volatility_ = 0.1;
+	bsm.risk_free_rate_ = 0.05;
+	bsm.stock_price_ = 100.0;
+
+	double lookback_price_antithetic = lookback_option.Price(bsm, true);
+	double lookback_price_standard = lookback_option.Price(bsm, false);
+	double diff = lookback_price_antithetic -lookback_price_standard;
 }
 
 

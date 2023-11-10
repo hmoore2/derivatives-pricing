@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/
+cmake_ninja_workdir = C$:/dev/Pricing/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Pricing-Eigen_run
 
@@ -49,12 +49,12 @@ cmake_ninja_workdir = /Users/henrymoore/Documents/Projects/Pricing/cmake-build-d
 
 build cmake_object_order_depends_target_Pricing-Eigen_run: phony || cmake_object_order_depends_target_Pricing-Eigen
 
-build CMakeFiles/Pricing-Eigen_run.dir/main.cpp.o: CXX_COMPILER__Pricing-Eigen_run_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/main.cpp || cmake_object_order_depends_target_Pricing-Eigen_run
-  DEP_FILE = CMakeFiles/Pricing-Eigen_run.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = CMakeFiles/Pricing-Eigen_run.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pricing-Eigen_run.dir
+build CMakeFiles/Pricing-Eigen_run.dir/main.cpp.obj: CXX_COMPILER__Pricing-Eigen_run_unscanned_Debug C$:/dev/Pricing/main.cpp || cmake_object_order_depends_target_Pricing-Eigen_run
+  DEP_FILE = CMakeFiles\Pricing-Eigen_run.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = CMakeFiles\Pricing-Eigen_run.dir
+  OBJECT_FILE_DIR = CMakeFiles\Pricing-Eigen_run.dir
 
 
 # =============================================================================
@@ -62,16 +62,17 @@ build CMakeFiles/Pricing-Eigen_run.dir/main.cpp.o: CXX_COMPILER__Pricing-Eigen_r
 
 
 #############################################
-# Link the executable Pricing-Eigen_run
+# Link the executable Pricing-Eigen_run.exe
 
-build Pricing-Eigen_run: CXX_EXECUTABLE_LINKER__Pricing-Eigen_run_Debug CMakeFiles/Pricing-Eigen_run.dir/main.cpp.o | Pricing-Eigen/libPricing-Eigen.a || Pricing-Eigen/libPricing-Eigen.a
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
-  LINK_LIBRARIES = Pricing-Eigen/libPricing-Eigen.a
-  OBJECT_DIR = CMakeFiles/Pricing-Eigen_run.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Pricing-Eigen_run
-  TARGET_PDB = Pricing-Eigen_run.dbg
+build Pricing-Eigen_run.exe: CXX_EXECUTABLE_LINKER__Pricing-Eigen_run_Debug CMakeFiles/Pricing-Eigen_run.dir/main.cpp.obj | Pricing-Eigen/libPricing-Eigen.a || Pricing-Eigen/libPricing-Eigen.a
+  FLAGS = -g
+  LINK_LIBRARIES = Pricing-Eigen/libPricing-Eigen.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Pricing-Eigen_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Pricing-Eigen_run.exe
+  TARGET_IMPLIB = libPricing-Eigen_run.dll.a
+  TARGET_PDB = Pricing-Eigen_run.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Pricing
@@ -82,26 +83,26 @@ build Pricing-Eigen_run: CXX_EXECUTABLE_LINKER__Pricing-Eigen_run_Debug CMakeFil
 
 build cmake_object_order_depends_target_Pricing: phony || CMakeFiles/Pricing.dir
 
-build CMakeFiles/Pricing.dir/main.cpp.o: CXX_COMPILER__Pricing_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/main.cpp || cmake_object_order_depends_target_Pricing
-  DEP_FILE = CMakeFiles/Pricing.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = CMakeFiles/Pricing.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pricing.dir
+build CMakeFiles/Pricing.dir/main.cpp.obj: CXX_COMPILER__Pricing_unscanned_Debug C$:/dev/Pricing/main.cpp || cmake_object_order_depends_target_Pricing
+  DEP_FILE = CMakeFiles\Pricing.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = CMakeFiles\Pricing.dir
+  OBJECT_FILE_DIR = CMakeFiles\Pricing.dir
 
-build CMakeFiles/Pricing.dir/Pricing-Eigen/MathsLib.cpp.o: CXX_COMPILER__Pricing_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/MathsLib.cpp || cmake_object_order_depends_target_Pricing
-  DEP_FILE = CMakeFiles/Pricing.dir/Pricing-Eigen/MathsLib.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = CMakeFiles/Pricing.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pricing.dir/Pricing-Eigen
+build CMakeFiles/Pricing.dir/Pricing-Eigen/MathsLib.cpp.obj: CXX_COMPILER__Pricing_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/MathsLib.cpp || cmake_object_order_depends_target_Pricing
+  DEP_FILE = CMakeFiles\Pricing.dir\Pricing-Eigen\MathsLib.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = CMakeFiles\Pricing.dir
+  OBJECT_FILE_DIR = CMakeFiles\Pricing.dir\Pricing-Eigen
 
-build CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.o: CXX_COMPILER__Pricing_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/BlackScholesModel.cpp || cmake_object_order_depends_target_Pricing
-  DEP_FILE = CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = CMakeFiles/Pricing.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pricing.dir/Pricing-Eigen
+build CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.obj: CXX_COMPILER__Pricing_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/BlackScholesModel.cpp || cmake_object_order_depends_target_Pricing
+  DEP_FILE = CMakeFiles\Pricing.dir\Pricing-Eigen\BlackScholesModel.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = CMakeFiles\Pricing.dir
+  OBJECT_FILE_DIR = CMakeFiles\Pricing.dir\Pricing-Eigen
 
 
 # =============================================================================
@@ -109,22 +110,24 @@ build CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.o: CXX_COMPILER
 
 
 #############################################
-# Link the executable Pricing
+# Link the executable Pricing.exe
 
-build Pricing: CXX_EXECUTABLE_LINKER__Pricing_Debug CMakeFiles/Pricing.dir/main.cpp.o CMakeFiles/Pricing.dir/Pricing-Eigen/MathsLib.cpp.o CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.o
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
-  OBJECT_DIR = CMakeFiles/Pricing.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Pricing
-  TARGET_PDB = Pricing.dbg
+build Pricing.exe: CXX_EXECUTABLE_LINKER__Pricing_Debug CMakeFiles/Pricing.dir/main.cpp.obj CMakeFiles/Pricing.dir/Pricing-Eigen/MathsLib.cpp.obj CMakeFiles/Pricing.dir/Pricing-Eigen/BlackScholesModel.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Pricing.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Pricing.exe
+  TARGET_IMPLIB = libPricing.dll.a
+  TARGET_PDB = Pricing.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -135,7 +138,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -153,7 +156,7 @@ build list_install_components: phony
 # Utility command for install
 
 build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -165,7 +168,7 @@ build install: phony CMakeFiles/install.util
 # Utility command for install/local
 
 build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -177,7 +180,7 @@ build install/local: phony CMakeFiles/install/local.util
 # Utility command for install/strip
 
 build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -186,7 +189,7 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrymoore/Documents/Projects/Pricing/CMakeLists.txt
+# C:/dev/Pricing/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -198,138 +201,145 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_Pricing-Eigen: phony || Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/MathsLib.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/MathsLib.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\MathsLib.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/BlackScholesModel.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/BlackScholesModel.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\BlackScholesModel.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/ContinuousTimeOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/ContinuousTimeOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\ContinuousTimeOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/ContinuousTimeOptionBase.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/ContinuousTimeOptionBase.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\ContinuousTimeOptionBase.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/MonteCarloPricer.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/MonteCarloPricer.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\MonteCarloPricer.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/CallOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/CallOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\CallOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/PathIndependentOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/PathIndependentOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\PathIndependentOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/PutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/PutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\PutOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/DigitalOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/DigitalOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\DigitalOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/AsianOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/AsianOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\AsianOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/KnockoutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/KnockoutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\KnockoutOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/UpAndOutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/UpAndOutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\UpAndOutOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/DownAndOutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/DownAndOutOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\DownAndOutOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/UpAndInOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/UpAndInOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\UpAndInOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/LookbackOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/LookbackOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\LookbackOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EquityModel.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/EquityModel.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EquityModel.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/EarlyExerciseOptionBase.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\EarlyExerciseOptionBase.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/EarlyExerciseOptionBase.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/AmericanCallOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\AmericanCallOption.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/AmericanCallOption.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Portfolio.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/Portfolio.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\Portfolio.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomBase.cpp.o: CXX_COMPILER__Pricing-Eigen_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/RandomBase.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomBase.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Priceable.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/Priceable.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\Priceable.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+
+build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomNumberGenerator.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/RandomNumberGenerator.cpp || cmake_object_order_depends_target_Pricing-Eigen
+  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\RandomNumberGenerator.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
 
 # =============================================================================
@@ -337,15 +347,14 @@ build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomBase.cpp.o: CXX_COMPILER_
 
 
 #############################################
-# Link the static library Pricing-Eigen/libPricing-Eigen.a
+# Link the static library Pricing-Eigen\libPricing-Eigen.a
 
-build Pricing-Eigen/libPricing-Eigen.a: CXX_STATIC_LIBRARY_LINKER__Pricing-Eigen_Debug Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EquityModel.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.o Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomBase.cpp.o
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+build Pricing-Eigen/libPricing-Eigen.a: CXX_STATIC_LIBRARY_LINKER__Pricing-Eigen_Debug Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Portfolio.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Priceable.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomNumberGenerator.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Pricing-Eigen/libPricing-Eigen.a
+  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Pricing-Eigen\libPricing-Eigen.a
   TARGET_PDB = Pricing-Eigen.a.dbg
 
 
@@ -353,7 +362,7 @@ build Pricing-Eigen/libPricing-Eigen.a: CXX_STATIC_LIBRARY_LINKER__Pricing-Eigen
 # Utility command for edit_cache
 
 build Pricing-Eigen/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Pricing-Eigen && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -364,7 +373,7 @@ build Pricing-Eigen/edit_cache: phony Pricing-Eigen/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build Pricing-Eigen/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Pricing-Eigen && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -382,7 +391,7 @@ build Pricing-Eigen/list_install_components: phony
 # Utility command for install
 
 build Pricing-Eigen/CMakeFiles/install.util: CUSTOM_COMMAND Pricing-Eigen/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Pricing-Eigen && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -394,7 +403,7 @@ build Pricing-Eigen/install: phony Pricing-Eigen/CMakeFiles/install.util
 # Utility command for install/local
 
 build Pricing-Eigen/CMakeFiles/install/local.util: CUSTOM_COMMAND Pricing-Eigen/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Pricing-Eigen && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -406,7 +415,7 @@ build Pricing-Eigen/install/local: phony Pricing-Eigen/CMakeFiles/install/local.
 # Utility command for install/strip
 
 build Pricing-Eigen/CMakeFiles/install/strip.util: CUSTOM_COMMAND Pricing-Eigen/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Pricing-Eigen && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -415,7 +424,7 @@ build Pricing-Eigen/install/strip: phony Pricing-Eigen/CMakeFiles/install/strip.
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrymoore/Documents/Projects/Pricing/CMakeLists.txt
+# C:/dev/Pricing/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -427,19 +436,19 @@ build Pricing-Eigen/install/strip: phony Pricing-Eigen/CMakeFiles/install/strip.
 
 build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_Pricing-Eigen cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/MathsLibTests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/MathsLibTests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/MathsLibTests.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/MathsLibTests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/dev/Pricing/Google_tests/MathsLibTests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\MathsLibTests.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -isystem C:/dev/Pricing/Google_tests/lib/googletest/include -isystem C:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
 
-build Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/BlackScholesTests.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.o.d
-  FLAGS = -g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  OBJECT_FILE_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
+build Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.obj: CXX_COMPILER__Google_Tests_run_unscanned_Debug C$:/dev/Pricing/Google_tests/BlackScholesTests.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = Google_tests\CMakeFiles\Google_Tests_run.dir\BlackScholesTests.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -isystem C:/dev/Pricing/Google_tests/lib/googletest/include -isystem C:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  OBJECT_FILE_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
 
 
 # =============================================================================
@@ -447,23 +456,24 @@ build Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.o: CXX_
 
 
 #############################################
-# Link the executable Google_tests/Google_Tests_run
+# Link the executable Google_tests\Google_Tests_run.exe
 
-build Google_tests/Google_Tests_run: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/MathsLibTests.cpp.o Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.o | Pricing-Eigen/libPricing-Eigen.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || Pricing-Eigen/libPricing-Eigen.a lib/libgtest.a lib/libgtest_main.a
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
-  LINK_LIBRARIES = Pricing-Eigen/libPricing-Eigen.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a
-  OBJECT_DIR = Google_tests/CMakeFiles/Google_Tests_run.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = Google_tests/Google_Tests_run
-  TARGET_PDB = Google_Tests_run.dbg
+build Google_tests/Google_Tests_run.exe: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug Google_tests/CMakeFiles/Google_Tests_run.dir/MathsLibTests.cpp.obj Google_tests/CMakeFiles/Google_Tests_run.dir/BlackScholesTests.cpp.obj | Pricing-Eigen/libPricing-Eigen.a lib/libgtest.a lib/libgtest_main.a lib/libgtest.a || Pricing-Eigen/libPricing-Eigen.a lib/libgtest.a lib/libgtest_main.a
+  FLAGS = -g
+  LINK_LIBRARIES = Pricing-Eigen/libPricing-Eigen.a  lib/libgtest.a  lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = Google_tests\CMakeFiles\Google_Tests_run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Google_tests\Google_Tests_run.exe
+  TARGET_IMPLIB = Google_tests\libGoogle_Tests_run.dll.a
+  TARGET_PDB = Google_Tests_run.exe.dbg
 
 
 #############################################
 # Utility command for edit_cache
 
 build Google_tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -474,7 +484,7 @@ build Google_tests/edit_cache: phony Google_tests/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build Google_tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -492,7 +502,7 @@ build Google_tests/list_install_components: phony
 # Utility command for install
 
 build Google_tests/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -504,7 +514,7 @@ build Google_tests/install: phony Google_tests/CMakeFiles/install.util
 # Utility command for install/local
 
 build Google_tests/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -516,7 +526,7 @@ build Google_tests/install/local: phony Google_tests/CMakeFiles/install/local.ut
 # Utility command for install/strip
 
 build Google_tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -525,7 +535,7 @@ build Google_tests/install/strip: phony Google_tests/CMakeFiles/install/strip.ut
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrymoore/Documents/Projects/Pricing/Google_tests/CMakeLists.txt
+# C:/dev/Pricing/Google_tests/CMakeLists.txt
 # =============================================================================
 
 
@@ -533,7 +543,7 @@ build Google_tests/install/strip: phony Google_tests/CMakeFiles/install/strip.ut
 # Utility command for edit_cache
 
 build Google_tests/lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -544,7 +554,7 @@ build Google_tests/lib/edit_cache: phony Google_tests/lib/CMakeFiles/edit_cache.
 # Utility command for rebuild_cache
 
 build Google_tests/lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -562,7 +572,7 @@ build Google_tests/lib/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -574,7 +584,7 @@ build Google_tests/lib/install: phony Google_tests/lib/CMakeFiles/install.util
 # Utility command for install/local
 
 build Google_tests/lib/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -586,7 +596,7 @@ build Google_tests/lib/install/local: phony Google_tests/lib/CMakeFiles/install/
 # Utility command for install/strip
 
 build Google_tests/lib/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -595,7 +605,7 @@ build Google_tests/lib/install/strip: phony Google_tests/lib/CMakeFiles/install/
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/CMakeLists.txt
+# C:/dev/Pricing/Google_tests/lib/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -607,12 +617,12 @@ build Google_tests/lib/install/strip: phony Google_tests/lib/CMakeFiles/install/
 
 build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
-  DEP_FILE = Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -std=c++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -I/Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/include -I/Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src
+build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILER__gmock_unscanned_Debug C$:/dev/Pricing/Google_tests/lib/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
+  DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj.d
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -IC:/dev/Pricing/Google_tests/lib/googlemock/include -IC:/dev/Pricing/Google_tests/lib/googlemock -isystem C:/dev/Pricing/Google_tests/lib/googletest/include -isystem C:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir\src
 
 
 # =============================================================================
@@ -620,15 +630,14 @@ build Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_C
 
 
 #############################################
-# Link the static library lib/libgmock.a
+# Link the static library lib\libgmock.a
 
-build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj || lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgmock.a
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgmock.a
   TARGET_PDB = gmock.a.dbg
 
 # =============================================================================
@@ -640,12 +649,12 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug Google_tests/lib/go
 
 build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
-  DEP_FILE = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -std=c++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src
+build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_unscanned_Debug C$:/dev/Pricing/Google_tests/lib/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  DEP_FILE = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -isystem C:/dev/Pricing/Google_tests/lib/googlemock/include -isystem C:/dev/Pricing/Google_tests/lib/googlemock -isystem C:/dev/Pricing/Google_tests/lib/googletest/include -isystem C:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir\src
 
 
 # =============================================================================
@@ -653,15 +662,14 @@ build Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o:
 
 
 #############################################
-# Link the static library lib/libgmock_main.a
+# Link the static library lib\libgmock_main.a
 
-build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmock.a lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj || lib/libgmock.a lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googlemock/CMakeFiles/gmock_main.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgmock_main.a
+  OBJECT_DIR = Google_tests\lib\googlemock\CMakeFiles\gmock_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgmock_main.a
   TARGET_PDB = gmock_main.a.dbg
 
 
@@ -669,7 +677,7 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug Google_te
 # Utility command for edit_cache
 
 build Google_tests/lib/googlemock/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googlemock && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -680,7 +688,7 @@ build Google_tests/lib/googlemock/edit_cache: phony Google_tests/lib/googlemock/
 # Utility command for rebuild_cache
 
 build Google_tests/lib/googlemock/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googlemock && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -698,7 +706,7 @@ build Google_tests/lib/googlemock/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/googlemock/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googlemock && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -710,7 +718,7 @@ build Google_tests/lib/googlemock/install: phony Google_tests/lib/googlemock/CMa
 # Utility command for install/local
 
 build Google_tests/lib/googlemock/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googlemock && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -722,7 +730,7 @@ build Google_tests/lib/googlemock/install/local: phony Google_tests/lib/googlemo
 # Utility command for install/strip
 
 build Google_tests/lib/googlemock/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/googlemock/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googlemock && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -731,7 +739,7 @@ build Google_tests/lib/googlemock/install/strip: phony Google_tests/lib/googlemo
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/CMakeLists.txt
+# C:/dev/Pricing/Google_tests/lib/googlemock/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -743,12 +751,12 @@ build Google_tests/lib/googlemock/install/strip: phony Google_tests/lib/googlemo
 
 build cmake_object_order_depends_target_gtest: phony || Google_tests/lib/googletest/CMakeFiles/gtest.dir
 
-build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
-  DEP_FILE = Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -std=c++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -I/Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -I/Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir/src
+build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/dev/Pricing/Google_tests/lib/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -IC:/dev/Pricing/Google_tests/lib/googletest/include -IC:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir\src
 
 
 # =============================================================================
@@ -756,15 +764,14 @@ build Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_C
 
 
 #############################################
-# Link the static library lib/libgtest.a
+# Link the static library lib\libgtest.a
 
-build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgtest.a
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest.a
   TARGET_PDB = gtest.a.dbg
 
 # =============================================================================
@@ -776,12 +783,12 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug Google_tests/lib/go
 
 build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
 
-build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
-  DEP_FILE = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -std=c++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics  -DGTEST_HAS_PTHREAD=1
-  INCLUDES = -I/usr/local/include/eigen3 -I/Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/include -isystem /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir
-  OBJECT_FILE_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src
+build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/dev/Pricing/Google_tests/lib/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  DEP_FILE = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen -isystem C:/dev/Pricing/Google_tests/lib/googletest/include -isystem C:/dev/Pricing/Google_tests/lib/googletest
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_FILE_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir\src
 
 
 # =============================================================================
@@ -789,15 +796,14 @@ build Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o:
 
 
 #############################################
-# Link the static library lib/libgtest_main.a
+# Link the static library lib\libgtest_main.a
 
-build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtest.a
-  ARCH_FLAGS = -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj || lib/libgtest.a
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = Google_tests/lib/googletest/CMakeFiles/gtest_main.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = lib/libgtest_main.a
+  OBJECT_DIR = Google_tests\lib\googletest\CMakeFiles\gtest_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest_main.a
   TARGET_PDB = gtest_main.a.dbg
 
 
@@ -805,7 +811,7 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug Google_te
 # Utility command for edit_cache
 
 build Google_tests/lib/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googletest && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -816,7 +822,7 @@ build Google_tests/lib/googletest/edit_cache: phony Google_tests/lib/googletest/
 # Utility command for rebuild_cache
 
 build Google_tests/lib/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/henrymoore/Documents/Projects/Pricing -B/Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googletest && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe --regenerate-during-build -SC:\dev\Pricing -BC:\dev\Pricing\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -834,7 +840,7 @@ build Google_tests/lib/googletest/list_install_components: phony
 # Utility command for install
 
 build Google_tests/lib/googletest/CMakeFiles/install.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googletest && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -P cmake_install.cmake"
   DESC = Install the project...
   pool = console
   restat = 1
@@ -846,7 +852,7 @@ build Google_tests/lib/googletest/install: phony Google_tests/lib/googletest/CMa
 # Utility command for install/local
 
 build Google_tests/lib/googletest/CMakeFiles/install/local.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googletest && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
   DESC = Installing only the local directory...
   pool = console
   restat = 1
@@ -858,7 +864,7 @@ build Google_tests/lib/googletest/install/local: phony Google_tests/lib/googlete
 # Utility command for install/strip
 
 build Google_tests/lib/googletest/CMakeFiles/install/strip.util: CUSTOM_COMMAND Google_tests/lib/googletest/all
-  COMMAND = cd /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest && /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  COMMAND = cmd.exe /C "cd /D C:\dev\Pricing\cmake-build-debug\Google_tests\lib\googletest && C:\Users\hezza\AppData\Local\Programs\CLion\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
   DESC = Installing the project stripped...
   pool = console
   restat = 1
@@ -868,9 +874,15 @@ build Google_tests/lib/googletest/install/strip: phony Google_tests/lib/googlete
 # =============================================================================
 # Target aliases.
 
-build Google_Tests_run: phony Google_tests/Google_Tests_run
+build Google_Tests_run: phony Google_tests/Google_Tests_run.exe
+
+build Google_Tests_run.exe: phony Google_tests/Google_Tests_run.exe
+
+build Pricing: phony Pricing.exe
 
 build Pricing-Eigen: phony Pricing-Eigen/libPricing-Eigen.a
+
+build Pricing-Eigen_run: phony Pricing-Eigen_run.exe
 
 build gmock: phony lib/libgmock.a
 
@@ -896,42 +908,42 @@ build libgtest_main.a: phony lib/libgtest_main.a
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug
+# Folder: C:/dev/Pricing/cmake-build-debug
 
-build all: phony Pricing-Eigen_run Pricing Pricing-Eigen/all Google_tests/all
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests
-
-build Google_tests/all: phony Google_tests/Google_Tests_run Google_tests/lib/all
+build all: phony Pricing-Eigen_run.exe Pricing.exe Pricing-Eigen/all Google_tests/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib
+# Folder: C:/dev/Pricing/cmake-build-debug/Google_tests
+
+build Google_tests/all: phony Google_tests/Google_Tests_run.exe Google_tests/lib/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/dev/Pricing/cmake-build-debug/Google_tests/lib
 
 build Google_tests/lib/all: phony Google_tests/lib/googlemock/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googlemock
+# Folder: C:/dev/Pricing/cmake-build-debug/Google_tests/lib/googlemock
 
 build Google_tests/lib/googlemock/all: phony lib/libgmock.a lib/libgmock_main.a Google_tests/lib/googletest/all
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Google_tests/lib/googletest
+# Folder: C:/dev/Pricing/cmake-build-debug/Google_tests/lib/googletest
 
 build Google_tests/lib/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 
 #############################################
-# Folder: /Users/henrymoore/Documents/Projects/Pricing/cmake-build-debug/Pricing-Eigen
+# Folder: C:/dev/Pricing/cmake-build-debug/Pricing-Eigen
 
 build Pricing-Eigen/all: phony Pricing-Eigen/libPricing-Eigen.a
 
@@ -947,14 +959,14 @@ build Pricing-Eigen/all: phony Pricing-Eigen/libPricing-Eigen.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython/Support.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython3.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/henrymoore/Documents/Projects/Pricing/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/cmake/gmock.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/cmake/gmock_main.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/Config.cmake.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/gtest.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/gtest_main.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/internal_utils.cmake /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/CMakeLists.txt /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDependentOption.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython3.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython/Support.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/GNUInstallDirs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake C$:/dev/Pricing/CMakeLists.txt C$:/dev/Pricing/Google_tests/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googlemock/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/dev/Pricing/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/dev/Pricing/Pricing-Eigen/CMakeLists.txt C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3Config.cmake C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3ConfigVersion.cmake C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDependentOption.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckIncludeFile.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CheckLibraryExists.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPackageMessage.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython/Support.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindPython3.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/FindThreads.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/GNUInstallDirs.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/henrymoore/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake /Users/henrymoore/Documents/Projects/Pricing/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/cmake/gmock.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googlemock/cmake/gmock_main.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/CMakeLists.txt /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/Config.cmake.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/gtest.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/gtest_main.pc.in /Users/henrymoore/Documents/Projects/Pricing/Google_tests/lib/googletest/cmake/internal_utils.cmake /Users/henrymoore/Documents/Projects/Pricing/Pricing-Eigen/CMakeLists.txt /usr/local/share/eigen3/cmake/Eigen3Config.cmake /usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake /usr/local/share/eigen3/cmake/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDependentOption.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakePackageConfigHelpers.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython3.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPython/Support.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/GNUInstallDirs.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/hezza/AppData/Local/Programs/CLion/bin/cmake/win/x64/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake C$:/dev/Pricing/CMakeLists.txt C$:/dev/Pricing/Google_tests/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googlemock/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googlemock/cmake/gmock.pc.in C$:/dev/Pricing/Google_tests/lib/googlemock/cmake/gmock_main.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/CMakeLists.txt C$:/dev/Pricing/Google_tests/lib/googletest/cmake/Config.cmake.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/gtest.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/gtest_main.pc.in C$:/dev/Pricing/Google_tests/lib/googletest/cmake/internal_utils.cmake C$:/dev/Pricing/Pricing-Eigen/CMakeLists.txt C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3Config.cmake C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3ConfigVersion.cmake C$:/dev/vcpkg/packages/eigen3_x64-windows/share/eigen3/Eigen3Targets.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -11,37 +11,37 @@ class ContinuousTimeOptionBase : public ContinuousTimeOption {
 public:
     virtual ~ContinuousTimeOptionBase() {}
 
-    double getMaturity() const {
-        return maturity;
+    double GetMaturity() const {
+        return maturity_;
     }
 
-    void setMaturity( double maturity ) {
-        this->maturity = maturity;
+    void SetMaturity(double maturity ) {
+        this->maturity_ = maturity;
     }
 
-    double getStrike() const {
-        return strike;
+    double GetStrike() const {
+        return strike_;
     }
 
     /*
-     *  Convenience method to calculate an approximate price
+     *  Convenience method to calculate an approximate Price
      *  for the option using the most appropriate method for
      *  the given option. Note that since you can't control
      *  the accuracy of the calculation this isn't a good method
      *  for general use, but is handy for tests.
      */
-    virtual double price( const BlackScholesModel& model ) const;
+    virtual double Price(const BlackScholesModel& model, const bool antithetic ) const;
 
-    void setStrike( double strike ) {
-        this->strike = strike;
+    void SetStrike(double strike ) {
+        this->strike_ = strike;
     }
 
 private:
-    double maturity;
-    double strike;
+    double maturity_;
+    double strike_;
 };
 
 ////////////////
 
 
-void testContinuousTimeOptionBase();
+void TestContinuousTimeOptionBase();

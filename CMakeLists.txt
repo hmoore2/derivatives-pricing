@@ -3,13 +3,11 @@ project(Pricing)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
-
 # Find Eigen library
-find_package(Eigen3 REQUIRED)
+find_package(Eigen3 CONFIG REQUIRED)
 
 # Add Eigen include directories
 include_directories(${EIGEN3_INCLUDE_DIR})
-
 set(SOURCE_FILES main.cpp)
 add_executable(Pricing-Eigen_run ${SOURCE_FILES})
 
@@ -23,7 +21,6 @@ add_executable(Pricing main.cpp
         Pricing-Eigen/MathsLib.cpp Pricing-Eigen/MathsLib.h
         Pricing-Eigen/BlackScholesModel.cpp
         Pricing-Eigen/BlackScholesModel.h
-
 )
 
 # Link Eigen libraries

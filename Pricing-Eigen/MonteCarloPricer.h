@@ -13,13 +13,12 @@ public:
     /*  Constructor */
     MonteCarloPricer();
     /*  Number of scenarios */
-    int nScenarios;
+    int n_scenarios_;
     /*  The number of steps in the calculation */
-    int nSteps;
+    int n_steps_;
     /*  Price the option */
-    double price( const ContinuousTimeOption& option,
-                  const EquityModel& model );
+    double Price(const ContinuousTimeOption& option,
+				 const BlackScholesModel& model, const bool antithetic);
 
 };
 
-void testMonteCarloPricer();

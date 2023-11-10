@@ -6,10 +6,10 @@
 
 #include "MathsLib.h"
 
-MatrixXd AsianOption::payoff(
+MatrixXd AsianOption::Payoff(
         const MatrixXd& prices ) const {
     MatrixXd average = prices.rowwise().mean();
-    average.array() -=  getStrike();
+    average.array() -= GetStrike();
     MatrixXd p = (average.array() < 0).select(0, average);
     return p;
 }

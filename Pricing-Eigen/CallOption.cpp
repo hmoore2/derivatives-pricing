@@ -1,26 +1,26 @@
 #include "CallOption.h"
 #include "MathsLib.h"
 
-MatrixXd CallOption::payoffAtMaturity( const MatrixXd& stockAtMaturity ) const {
-    MatrixXd val = stockAtMaturity.array() - getStrike();
+MatrixXd CallOption::PayoffAtMaturity(const MatrixXd& stock_at_maturity ) const {
+    MatrixXd val = stock_at_maturity.array() - GetStrike();
     val = (val.array() < 0).select(0, val);  // Set negative values to zero.
     return val;
 }
 
 
-double CallOption::price( 
+double CallOption::Price(
         const BlackScholesModel& bsm ) const {
-    double S = bsm.stockPrice;
-    double K = getStrike();
-    double sigma = bsm.volatility;
-    double r = bsm.riskFreeRate;
-    double T = getMaturity() - bsm.date;
+    double s = bsm.stock_price_;
+    double k = GetStrike();
+    double sigma = bsm.volatility_;
+    double r = bsm.risk_free_rate_;
+    double t = GetMaturity() - bsm.date_;
 
-    double numerator = log( S/K ) + ( r + sigma*sigma*0.5)*T;
-    double denominator = sigma * sqrt(T );
+    double numerator = log(s/k ) + ( r + sigma*sigma*0.5)*t;
+    double denominator = sigma * sqrt(t );
     double d1 = numerator/denominator;
     double d2 = d1 - denominator;
-    return S*normcdf(d1) - exp(-r*T)*K*normcdf(d2);
+    return s* Normcdf(d1) - exp(-r*t)*k* Normcdf(d2);
 }
 
 
@@ -36,17 +36,17 @@ double CallOption::price(
 /*
 static void testCallOptionPrice() {
     CallOption callOption;
-    callOption.setStrike( 105.0 );
-    callOption.setMaturity( 2.0 );
+    callOption.SetStrike( 105.0 );
+    callOption.SetMaturity( 2.0 );
     
     BlackScholesModel bsm;
     bsm.date = 1.0;
-    bsm.volatility = 0.1;
-    bsm.riskFreeRate = 0.05;
-    bsm.stockPrice = 100.0;
+    bsm.volatility_ = 0.1;
+    bsm.risk_free_rate_ = 0.05;
+    bsm.stock_price_ = 100.0;
 
-    double price = callOption.price( bsm );
-    ASSERT_APPROX_EQUAL( price, 4.046, 0.01);
+    double Price = callOption.Price( bsm );
+    ASSERT_APPROX_EQUAL( Price, 4.046, 0.01);
 
 }
 

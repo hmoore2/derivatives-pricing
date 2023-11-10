@@ -3,63 +3,105 @@
 //
 
 #include "BlackScholesModel.h"
-
+#include "RandomNumberGenerator.h"
 using namespace std;
 #include "MathsLib.h"
 BlackScholesModel::BlackScholesModel() :
-        drift(0.0),
-        stockPrice(0.0),
-        volatility(0.0),
-        riskFreeRate(0.0),
-        date(0.0) {
+	drift_(0.0),
+	stock_price_(0.0),
+	volatility_(0.0),
+	risk_free_rate_(0.0),
+	date_(0.0) {
 }
 
 /**
- *  Creates a price path according to the model parameters
+ *  Creates a Price path according to the model parameters
  */
 MatrixXd BlackScholesModel::
-generateRiskNeutralPricePaths(
-        double toDate,
-        int nPaths,
-        int nSteps ) const {
-    return generatePricePaths( toDate, nPaths, nSteps, riskFreeRate );
+GenerateRiskNeutralPricePaths(
+        double to_date,
+        int n_paths,
+        int n_steps ) const {
+    return GeneratePricePaths(to_date, n_paths, n_steps, risk_free_rate_);
 }
 
 /**
- *  Creates a price path according to the model parameters
+ *  Creates a Price path according to the model parameters
  */
-MatrixXd BlackScholesModel::generatePricePaths(
-        double toDate,
-        int nPaths,
-        int nSteps ) const {
-    return generatePricePaths( toDate, nPaths, nSteps, drift );
+MatrixXd BlackScholesModel::GeneratePricePaths(
+        double to_date,
+        int n_paths,
+        int n_steps ) const {
+    return GeneratePricePaths(to_date, n_paths, n_steps, drift_);
 }
 
-
+/**
+ *  Creates a Price path according to the model parameters
+ */
+MatrixXd BlackScholesModel::
+GenerateRiskNeutralPricePathsAntithetic(
+	double to_date,
+	int n_paths,
+	int n_steps ) const {
+	return GeneratePricePathsAntithetic(to_date, n_paths, n_steps, risk_free_rate_);
+}
 
 /**
- *  Creates a price path according to the model parameters
+ *  Creates a Price path according to the model parameters
  */
-MatrixXd BlackScholesModel::generatePricePaths(
-        double toDate,
-        int nPaths,
-        int nSteps,
+MatrixXd BlackScholesModel::GeneratePricePathsAntithetic(
+	double to_date,
+	int n_paths,
+	int n_steps ) const {
+	return GeneratePricePathsAntithetic(to_date, n_paths, n_steps, drift_);
+}
+
+/**
+ *  Creates a Price path according to the model parameters
+ */
+MatrixXd BlackScholesModel::GeneratePricePaths(
+        double to_date,
+        int n_paths,
+        int n_steps,
         double drift ) const {
-    MatrixXd path(nPaths, nSteps);
-
-    double dt = (toDate-date)/nSteps;
-    double a = (drift - volatility*volatility*0.5)*dt;
-    double b = volatility*sqrt(dt);
-    MatrixXd currentLogS=log(stockPrice)*MatrixXd::Ones(nPaths,1);
-    for (int i=0; i<nSteps; i++) {
-        MatrixXd vals = randn( nPaths,1 );
-        // vals contains epsilon
-        vals*=b;
-        vals.array()+=a;   // vals now contains dLogS
-        vals+=currentLogS; // vals now contains logS
-        currentLogS = vals;
-        vals = vals.array().exp(); // vals now contains S
-        path.col(i) = vals;
+    MatrixXd path(n_paths, n_steps);
+	MersenneTwister mtw;
+	double dt = (to_date-date_)/n_steps;
+    double a = (drift - volatility_*volatility_*0.5)*dt;
+    double b = volatility_*sqrt(dt);
+    MatrixXd current_log_s=log(stock_price_)*MatrixXd::Ones(n_paths, 1);
+    for (int i=0; i<n_steps; i++) {
+	  MatrixXd vals = mtw.RandNormal(n_paths,1);
+	  // vals contains epsilon
+	  vals*=b;
+	  vals.array()+=a;   // vals now contains dLogS
+	  vals+=current_log_s; // vals now contains logS
+	  current_log_s = vals;
+	  vals = vals.array().exp(); // vals now contains S
+	  path.col(i) = vals;
     }
     return path;
+}
+
+MatrixXd BlackScholesModel::GeneratePricePathsAntithetic(
+	double to_date,
+	int n_paths,
+	int n_steps, double drift) const{
+	MatrixXd path(n_paths, n_steps);
+	MersenneTwisterAntithetic mtw_anithetic;
+	double dt = (to_date-date_)/n_steps;
+	double a = (drift - volatility_*volatility_*0.5)*dt;
+	double b = volatility_*sqrt(dt);
+	MatrixXd current_log_s=log(stock_price_)*MatrixXd::Ones(n_paths, 1);
+	for (int i=0; i<n_steps; i++) {
+		MatrixXd vals = mtw_anithetic.RandNormal(n_paths,1);
+		// vals contains epsilon
+		vals*=b;
+		vals.array()+=a;   // vals now contains dLogS
+		vals+=current_log_s; // vals now contains logS
+		current_log_s = vals;
+		vals = vals.array().exp(); // vals now contains S
+		path.col(i) = vals;
+	}
+	return path;
 }

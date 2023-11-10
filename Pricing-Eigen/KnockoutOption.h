@@ -9,17 +9,17 @@ class KnockoutOption : public ContinuousTimeOptionBase {
 public:
     virtual ~KnockoutOption() {}
 
-    double getBarrier() const {
-        return barrier;
+    double GetBarrier() const {
+        return barrier_;
     }
 
-    void setBarrier(double barrier) {
-        this->barrier=barrier;
+    void SetBarrier(double barrier) {
+        this->barrier_=barrier;
     }
 
-    bool isPathDependent() const {
+    bool IsPathDependent() const {
         return true;
     }
 private:
-    double barrier;
+    double barrier_;
 };

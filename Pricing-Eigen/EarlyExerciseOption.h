@@ -7,5 +7,5 @@ public:
     /*  Virtual destructor */
     virtual ~EarlyExerciseOption() {};
     /*  The maturity of the option */
-    virtual double getMaturity() const = 0;
+    virtual double GetMaturity() const = 0;
 };

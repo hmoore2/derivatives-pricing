@@ -5,10 +5,10 @@
 #include "LookbackOption.h"
 
 
-MatrixXd LookbackOption::payoff(
+MatrixXd LookbackOption::Payoff(
         const MatrixXd& prices ) const {
     MatrixXd max = prices.rowwise().maxCoeff();
-    max.array() -=  getStrike();
+    max.array() -= GetStrike();
     MatrixXd p = (max.array() < 0).select(0, max);
     return p;
 }

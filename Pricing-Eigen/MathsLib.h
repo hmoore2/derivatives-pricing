@@ -11,26 +11,20 @@
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
-const double PI = 3.1415926535897932384626433832795028842;
+const double kPi = 3.1415926535897932384626433832795028842;
 
-double bisection(std::function<double(double)> f, double low, double high,double tolerance, double target);
+double Bisection(std::function<double(double)> f, double low, double high, double tolerance, double target);
 
-double norminv( double x );
+double Norminv(double x );
 
-double impliedVolatility(double S, double r, double K, double T, double price);
+double ImpliedVolatility(double s, double r, double k, double t, double price);
 
-double normcdf( double x );
+double Normcdf(double x );
 
-double integrate(std::function<double(double)> f, double a, double b, int nSteps);
+double Integrate(std::function<double(double)> f, double a, double b, int n_steps);
 
-/*  Create uniformly distributed random numbers */
-MatrixXd randuniform( int rows, int cols );
-/*  Create normally distributed random numbers */
-MatrixXd randn( int rows, int cols );
 /*  Seeds the default random number generator */
-void rng( const std::string& setting );
-
-void testMatlib();
+void Rng(const std::string& setting );
 
 
 #endif //PRICINGLIBRARY_MATHSLIB_H
