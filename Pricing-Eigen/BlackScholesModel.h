@@ -6,13 +6,14 @@
 
 #include "stdafx.h"
 #include "Eigen/Dense"
-
+#include "MathsLib.h"
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 
 class BlackScholesModel {
 public:
     BlackScholesModel();
+
     double drift_;
     double stock_price_;
     double volatility_;
@@ -22,22 +23,12 @@ public:
     MatrixXd GeneratePricePaths(
             double to_date,
             int n_paths,
-            int n_steps) const;
+            int n_steps, std::shared_ptr<RandomNumberGenerator> random) const;
 
     MatrixXd GenerateRiskNeutralPricePaths(
             double to_date,
             int n_paths,
-            int n_steps) const;
-
-  MatrixXd GeneratePricePathsAntithetic(
-	  double to_date,
-	  int n_paths,
-	  int n_steps) const;
-
-  MatrixXd GenerateRiskNeutralPricePathsAntithetic(
-	  double to_date,
-	  int n_paths,
-	  int n_steps) const;
+            int n_steps, std::shared_ptr<RandomNumberGenerator> random) const;
 
 
   double GetRiskFreeRate() const {
@@ -53,13 +44,7 @@ private:
             double to_date,
             int n_paths,
             int n_steps,
-            double drift) const;
-
-  	MatrixXd GeneratePricePathsAntithetic(
-	  double to_date,
-	  int n_paths,
-	  int n_steps,
-	  double drift) const;
+            double drift, const std::shared_ptr<RandomNumberGenerator>& random) const;
 
 };
 

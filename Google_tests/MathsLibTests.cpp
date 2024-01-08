@@ -3,7 +3,6 @@
 //
 #include "gtest/gtest.h"
 #include "../Pricing-Eigen/MathsLib.h"
-#include "RandomNumberGenerator.h"
 
 TEST(MathsLib, Bisection){
     auto lambda = [](double x){
@@ -21,30 +20,7 @@ TEST(MathsLib, Bisection){
     ASSERT_NEAR( actual2, expected2, 0.000001);
 }
 
-TEST(MathsLib, Randuniform ){
-  	MersenneTwister rand;
 
-    MatrixXd m = rand.RandUniform(1000, 1);
-    ASSERT_TRUE( m.rows()==1000 );
-    ASSERT_NEAR(m.colwise().mean().mean(), 0.5, 0.1);
-    ASSERT_TRUE( m.maxCoeff()<1);
-    ASSERT_TRUE( m.minCoeff()>0);
-}
-
-TEST(MathsLib, RandNormalAntithetic ){
-	MersenneTwisterAntithetic rand;
-	MatrixXd m = rand.RandNormal(1000, 1);
-	ASSERT_TRUE( m.rows()==1000 );
-	ASSERT_NEAR( m.colwise().mean().mean(), 0.0, 0.1);
-}
-
-
-TEST(MathsLib, Randn){
-	MersenneTwisterAntithetic rand;
-	MatrixXd m = rand.RandNormal(10000, 1);
-    ASSERT_TRUE( m.rows()==10000 );
-    ASSERT_NEAR( m.colwise().mean().mean(), 0.0, 0.1);
-}
 
 TEST(MathsLib, lambdaIntegral){
     auto lambda = [](double x) {

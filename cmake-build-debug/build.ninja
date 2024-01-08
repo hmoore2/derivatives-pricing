@@ -334,13 +334,6 @@ build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Priceable.cpp.obj: CXX_COMPILER
   OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
   OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
 
-build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomNumberGenerator.cpp.obj: CXX_COMPILER__Pricing-Eigen_unscanned_Debug C$:/dev/Pricing/Pricing-Eigen/RandomNumberGenerator.cpp || cmake_object_order_depends_target_Pricing-Eigen
-  DEP_FILE = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir\RandomNumberGenerator.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/dev/vcpkg/packages/eigen3_x64-windows/include/eigen3 -IC:/dev/Pricing/Pricing-Eigen
-  OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
-  OBJECT_FILE_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
-
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target Pricing-Eigen
@@ -349,7 +342,7 @@ build Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomNumberGenerator.cpp.obj: 
 #############################################
 # Link the static library Pricing-Eigen\libPricing-Eigen.a
 
-build Pricing-Eigen/libPricing-Eigen.a: CXX_STATIC_LIBRARY_LINKER__Pricing-Eigen_Debug Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Portfolio.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Priceable.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/RandomNumberGenerator.cpp.obj
+build Pricing-Eigen/libPricing-Eigen.a: CXX_STATIC_LIBRARY_LINKER__Pricing-Eigen_Debug Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MathsLib.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/BlackScholesModel.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/ContinuousTimeOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/MonteCarloPricer.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/CallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PathIndependentOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/PutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DigitalOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AsianOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/KnockoutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/DownAndOutOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/UpAndInOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/LookbackOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/EarlyExerciseOptionBase.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/AmericanCallOption.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Portfolio.cpp.obj Pricing-Eigen/CMakeFiles/Pricing-Eigen.dir/Priceable.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Pricing-Eigen\CMakeFiles\Pricing-Eigen.dir
   POST_BUILD = cd .

@@ -28,12 +28,10 @@ set(SOURCE_FILES
         EarlyExerciseOptionBase.cpp
         EarlyExerciseOptionBase.h
         AmericanCallOption.cpp
-        RandomNumberGenerator.h
         Priceable.h
         Portfolio.h
         Portfolio.cpp
         Priceable.cpp
-        RandomNumberGenerator.cpp
 )
 
 

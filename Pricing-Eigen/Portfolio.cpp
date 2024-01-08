@@ -17,7 +17,7 @@ class PortfolioImpl : public Portfolio {
   void SetQuantity( int index, double quantity );
   /*  Compute the current price */
   double Price(
-	  const BlackScholesModel& model, bool antithetic) const;
+	  const BlackScholesModel& model) const;
 
   vector<double> quantities;
   vector< shared_ptr<Priceable> > securities;
@@ -35,12 +35,12 @@ int PortfolioImpl::Add( double quantity,
 }
 
 double PortfolioImpl::Price(
-	const BlackScholesModel& model, bool antithetic ) const {
+	const BlackScholesModel& model ) const {
 	double ret = 0;
 	int n = Size();
 	for (int i=0; i<n; i++) {
 		ret += quantities[i]
-			* securities[i]->Price( model, true);
+			* securities[i]->Price( model);
 	}
 	return ret;
 }

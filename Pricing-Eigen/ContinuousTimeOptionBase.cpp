@@ -9,9 +9,11 @@
 */
 
 
-double ContinuousTimeOptionBase::Price(const BlackScholesModel& model, const bool antithetic ) const {
+double ContinuousTimeOptionBase::Price(const BlackScholesModel& model ) const {
     MonteCarloPricer pricer;
-    return pricer.Price(*this, model, antithetic);
+	std::shared_ptr<RandomNumberGenerator> random(std::make_shared<MersenneTwister>());
+
+    return pricer.Price(*this, model, random);
 }
 
 //////////////////////////////

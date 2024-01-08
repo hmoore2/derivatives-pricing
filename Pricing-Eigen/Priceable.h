@@ -15,7 +15,7 @@ class Priceable {
   /*  Compute the price of the security in the
 	  Black--Scholes world */
   virtual double Price(
-	  const BlackScholesModel& model, bool antithetic ) const = 0;
+	  const BlackScholesModel& model ) const = 0;
 };
 
 #endif //PRICING_PRICING_PRICING_EIGEN_PRICEABLE_H_

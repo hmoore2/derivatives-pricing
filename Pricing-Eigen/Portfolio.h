@@ -25,7 +25,7 @@ class Portfolio : public Priceable {
 							double quantity ) = 0;
   /*  Compute the current price */
   virtual double Price(
-	  const BlackScholesModel& model, bool antithetic ) const = 0;
+	  const BlackScholesModel& model ) const = 0;
   /*  Creates a Portfolio */
   static std::shared_ptr<Portfolio> NewInstance();
 };

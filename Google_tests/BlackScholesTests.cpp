@@ -18,15 +18,14 @@
 #include "../Pricing-Eigen/UpAndInOption.h"
 #include "../Pricing-Eigen/LookbackOption.h"
 #include "../Pricing-Eigen/AmericanCallOption.h"
-#include "../Pricing-Eigen/RandomNumberGenerator.h"
-
+#include <memory>
 
 #include <cmath>
 
 TEST(AmericanOption, price){
     AmericanCallOption american_call_option;
-  american_call_option.SetStrike(95.0);
-  american_call_option.SetMaturity(1.0);
+  	american_call_option.SetStrike(95.0);
+  	american_call_option.SetMaturity(1.0);
     int nas = 200;
 
     BlackScholesModel bsm;
@@ -51,10 +50,12 @@ TEST(BlackScholesModel, pricePath){
     int n_paths = 100000;
     int nsteps = 5;
     double maturity = 4.0;
+
+	std::shared_ptr<RandomNumberGenerator> mtw(std::make_shared<MersenneTwister>());
     MatrixXd paths =
 		bsm.GenerateRiskNeutralPricePaths(maturity,
 										  n_paths,
-										  nsteps);
+										  nsteps, mtw);
     MatrixXd final_prices = paths.col(nsteps-1 );
     ASSERT_NEAR(final_prices.rowwise().mean().mean(),
 				exp( bsm.risk_free_rate_*2.0)*bsm.stock_price_, 0.1);
@@ -64,8 +65,8 @@ TEST(MonteCarloPricer, callOptionMC){
     //Rng("default");
 
     CallOption c;
-  c.SetStrike(110);
-  c.SetMaturity(2);
+  	c.SetStrike(110);
+ 	 c.SetMaturity(2);
 
     BlackScholesModel m;
     m.volatility_ = 0.1;
@@ -74,8 +75,11 @@ TEST(MonteCarloPricer, callOptionMC){
     m.drift_ = 0.1;
     m.date_ = 1;
 
-    MonteCarloPricer pricer;
-    double price = pricer.Price(c, m, true);
+	std::shared_ptr<RandomNumberGenerator> mtw(std::make_shared<MersenneTwister>());
+
+
+	MonteCarloPricer pricer;
+    double price = pricer.Price(c,m, mtw);
     double expected = c.Price(m);
     ASSERT_NEAR( price, expected, 0.1 );
 }
@@ -84,8 +88,8 @@ TEST(CallOption, callOptionPrice){
     //Rng("default");
 
     CallOption c;
-  c.SetStrike(110);
-  c.SetMaturity(2);
+  	c.SetStrike(110);
+  	c.SetMaturity(2);
 
     BlackScholesModel m;
     m.volatility_ = 0.1;
@@ -93,18 +97,20 @@ TEST(CallOption, callOptionPrice){
     m.stock_price_ = 100.0;
     m.drift_ = 0.1;
     m.date_ = 1;
+	std::shared_ptr<RandomNumberGenerator> mtw(std::make_shared<MersenneTwister>());
 
-    MonteCarloPricer pricer;
+
+	MonteCarloPricer pricer;
     pricer.n_scenarios_ = 10000;
-    double price = pricer.Price(c, m, true);
+    double price = pricer.Price(c,m, mtw);
     double expected = c.Price(m);
     ASSERT_NEAR( price, expected, 0.1 );
 }
 
 TEST(digitalOption, testDigitalOptionPrice){
     DigitalOption digital_option;
-  digital_option.SetStrike(105.0);
-  digital_option.SetMaturity(2.0);
+ 	digital_option.SetStrike(105.0);
+  	digital_option.SetMaturity(2.0);
 
     BlackScholesModel bsm;
     bsm.date_ = 1.0;
@@ -151,7 +157,7 @@ TEST(asianOption, testAsianOption){
     bsm.risk_free_rate_ = 0.05;
     bsm.stock_price_ = 100.0;
 
-    double price = asian_option.Price(bsm, true);
+    double price = asian_option.Price(bsm);
     double call_price = call_option.Price(bsm);
     double digital_price = digital_option.Price(bsm);
     ASSERT_LE(price, call_price);
@@ -181,8 +187,8 @@ TEST(UpAndOutOption, testUpAndOutOptionPrice){
     bsm.stock_price_ = 100.0;
 
     double call_price = call_option.Price(bsm);
-    double up_and_out_price = up_and_out_option.Price(bsm, true);
-    double up_and_out_price_2 = up_and_out_option_2.Price(bsm, true);
+    double up_and_out_price = up_and_out_option.Price(bsm);
+    double up_and_out_price_2 = up_and_out_option_2.Price(bsm);
 
     ASSERT_NEAR(up_and_out_price, call_price, 0.1);
     ASSERT_LE(up_and_out_price_2, call_price);
@@ -211,8 +217,8 @@ TEST(UpAndOutDownAndOut, UpAndOutOptionPriceTestAnalytical){
     bsm.stock_price_ = 100.0;
 
     double call_price = call_option.Price(bsm);
-    double up_and_out_price = up_and_out_option.Price(bsm, true);
-    double up_and_in_price = up_and_in_option.Price(bsm, true);
+    double up_and_out_price = up_and_out_option.Price(bsm);
+    double up_and_in_price = up_and_in_option.Price(bsm);
     // The value of an up-and-in call option plus an up-and out should be the same as a vanilla call.
     double total = up_and_in_price + up_and_out_price;
 
@@ -237,26 +243,49 @@ TEST(LookbackOption, LookbackOptionPrice){
     bsm.stock_price_ = 100.0;
 
     double call_price = call_option.Price(bsm);
-    double lookbackPrice = lookback_option.Price(bsm, true);
+    double lookbackPrice = lookback_option.Price(bsm);
 
     ASSERT_LE(call_price, lookbackPrice);
 }
 
-TEST(AntitheticTest, antitheticConvergence){
 
-	LookbackOption lookback_option;
-	lookback_option.SetStrike(105.0);
-	lookback_option.SetMaturity(105.0);
+TEST(Decorator, decoratorPricingTest){
 
-	BlackScholesModel bsm;
-	bsm.date_ = 1.0;
-	bsm.volatility_ = 0.1;
-	bsm.risk_free_rate_ = 0.05;
-	bsm.stock_price_ = 100.0;
+	CallOption c;
+	c.SetStrike(110);
+	c.SetMaturity(2);
 
-	double lookback_price_antithetic = lookback_option.Price(bsm, true);
-	double lookback_price_standard = lookback_option.Price(bsm, false);
-	double diff = lookback_price_antithetic -lookback_price_standard;
+	BlackScholesModel m;
+	m.volatility_ = 0.1;
+	m.risk_free_rate_ = 0.05;
+	m.stock_price_ = 100.0;
+	m.drift_ = 0.1;
+	m.date_ = 1;
+
+	std::shared_ptr<RandomNumberGenerator> random(std::make_shared<Antithetic_decorator>
+									  (std::make_shared<MersenneTwister>()));
+
+	MonteCarloPricer pricer;
+	pricer.n_scenarios_ = 10000;
+	double price = pricer.Price(c,m, random);
+	double expected = c.Price(m);
+	ASSERT_NEAR( price, expected, 0.1 );
 }
 
 
+TEST(Decorator, randDecorator){
+
+	std::shared_ptr<RandomNumberGenerator> random(std::make_shared<Antithetic_decorator>
+													  (std::make_shared<MersenneTwister>()));
+	MatrixXd normals = random->GetGaussians(1000,2000);
+	double average = normals.rowwise().mean().mean();
+	ASSERT_NEAR( average, 0, 0.001 );
+}
+
+TEST(RandomNumberGenerator, num_recipes_rand){
+
+	std::shared_ptr<RandomNumberGenerator> random(std::make_shared<Ran>(5432));
+	MatrixXd normals = random->GetGaussians(1000,2000);
+	double average = normals.rowwise().mean().mean();
+	ASSERT_NEAR( average, 0, 0.001 );
+}

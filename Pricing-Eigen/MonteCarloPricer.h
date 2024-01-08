@@ -7,6 +7,7 @@
 #include "stdafx.h"
 #include "ContinuousTimeOption.h"
 #include "BlackScholesModel.h"
+#include "MathsLib.h"
 
 class MonteCarloPricer {
 public:
@@ -18,7 +19,7 @@ public:
     int n_steps_;
     /*  Price the option */
     double Price(const ContinuousTimeOption& option,
-				 const BlackScholesModel& model, const bool antithetic);
+				 const BlackScholesModel& model, std::shared_ptr<RandomNumberGenerator> random);
 
 };
 

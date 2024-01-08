@@ -30,7 +30,7 @@ public:
      *  the accuracy of the calculation this isn't a good method
      *  for general use, but is handy for tests.
      */
-    virtual double Price(const BlackScholesModel& model, const bool antithetic ) const;
+    virtual double Price(const BlackScholesModel& model ) const;
 
     void SetStrike(double strike ) {
         this->strike_ = strike;

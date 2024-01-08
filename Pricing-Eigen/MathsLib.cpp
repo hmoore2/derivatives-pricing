@@ -148,3 +148,40 @@ public:
         return sin(x);
     }
 };
+
+/*  MersenneTwister random number generator */
+static mt19937 mersenneTwister;
+/*  Mutex to protect static var */
+//static mutex rngMutex;
+
+
+MatrixXd MersenneTwister::GetUniforms(int rows, int cols) {
+	//lock_guard<mutex> lock(rngMutex);
+	MatrixXd ret(rows, cols);
+	for (int i = 0; i<rows; i++) {
+		for (int j = 0; j<cols; j++) {
+			ret(i, j) = (mersenneTwister() + 0.5) / (std::mt19937::max() + 1.0);
+		}
+	}
+	return ret;
+}
+
+
+MatrixXd RandomNumberGenerator::GetGaussians(int rows, int cols) {
+	//lock_guard<mutex> lock(rngMutex);
+	MatrixXd ret = GetUniforms(rows, cols);
+	for (int j = 0; j<cols; j++) {
+		for (int i = 0; i<rows; i++) {
+			ret(i, j) = Norminv(ret(i, j));
+		}
+	}
+	return ret;
+
+}
+
+
+void RandomNumberGenerator::rng() {
+	//lock_guard<mutex> lock(rngMutex);
+	mersenneTwister.seed(mt19937::default_seed);
+}
+

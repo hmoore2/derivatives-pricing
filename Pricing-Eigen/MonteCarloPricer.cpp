@@ -17,7 +17,7 @@ MonteCarloPricer::MonteCarloPricer() :
 
 double MonteCarloPricer::Price(
         const ContinuousTimeOption& option,
-        const BlackScholesModel& model, const bool antithetic ) {
+        const BlackScholesModel& model, std::shared_ptr<RandomNumberGenerator> random) {
     int n_steps = this->n_steps_;
     if (!option.IsPathDependent()) {
 	  n_steps = 1;
@@ -37,20 +37,11 @@ double MonteCarloPricer::Price(
         if (scenarios_remaining<batch_size) {
 		  this_batch = scenarios_remaining;
         }
-			if(antithetic){
-			paths = model.
-				GenerateRiskNeutralPricePathsAntithetic(
+
+		paths = model.GenerateRiskNeutralPricePaths(
 				option.GetMaturity(),
 				this_batch,
-				n_steps);
-			}
-			else{
-				paths = model.
-				GenerateRiskNeutralPricePaths(
-				option.GetMaturity(),
-				this_batch,
-				n_steps);
-			}
+				n_steps, random);
 
         MatrixXd payoffs = option.Payoff(paths);
         total+= payoffs.rowwise().sum().sum();
